@@ -16,6 +16,36 @@ int main() {
 
   // Generate the random number between 1 and 100
   random_number = rand() % 100 + 1;
- 
-  cout << "Your random number is: " << random_number << endl;
+
+  int users_guess;
+  // Let the user guess the number through input cin
+  do {
+    // prompt for a guess
+    cout << "give it a go. tell me a number: ";
+    // check for input validity
+    if (!(cin >> users_guess)) {
+      cout << "please enter a number" << endl;
+      cin.clear();
+      cin.ignore(10000,'\n');
+      continue;
+    }
+
+    if (users_guess <= 0 || users_guess > 100) {
+      cout << "your guess was out of the bounds [1,100]" << endl;
+      continue;
+    }
+
+    if (users_guess < random_number) {
+      cout << "Your guess was too low" << endl;
+    } else if (users_guess > random_number) {
+      cout << "Your guess was too high" << endl;
+    } else {
+      cout << "Your it right! ";
+    }
+
+
+  }while (users_guess != random_number);
+
+
+  cout << "The random number is: " << random_number << endl;
 }
