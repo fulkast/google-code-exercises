@@ -16,6 +16,6 @@ int main() {
 
   // Generate the random number between 1 and 100
   random_number = rand() % 100 + 1;
-
+ 
   cout << "Your random number is: " << random_number << endl;
 }
